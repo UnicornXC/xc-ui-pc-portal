@@ -3,7 +3,7 @@
     <div class="learing-list">
       <div class="list-box">
         <ul>
-          <li>关键字ss：</li>
+          <li>关键字：</li>
           <ol>
             <li>{{keyword}}
 
@@ -91,7 +91,7 @@
                     </ul>
                   </a>
                 </div>-->
-                <div class="recom-item" v-for="(course, index) in courselist">
+                <div class="recom-item" v-for="(course, _index) in courselist" :key="course.id">
                   <a :href="'/course/detail/'+course.id+'.html'" target="_blank">
                     <!--<a href="/course/detail/test.html" target="_blank">-->
                     <div v-if="course.pic">
@@ -196,7 +196,8 @@
       }
       //向java微服务发起请求搜索课程
       //请求搜索服务，搜索服务
-      let course_data = await courseApi.search_course(page,2,route.query);
+      let course_data = await courseApi.search_course(page,8,route.query);
+      console.log("采集数据")
       //查询分类
       let category_data = await courseApi.sysres_category()
       if (course_data &&　course_data.queryResult ) {
@@ -274,7 +275,7 @@
         imgUrl:config.imgUrl,
         total:0,//总记录数
         page:1,//页码
-        page_size:2//每页显示个数
+        page_size: 8//每页显示个数
       }
     },
     watch:{//路由发生变化立即搜索search表示search方法

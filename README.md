@@ -1,23 +1,35 @@
-# xc-ui-portal
-# xc-portal
 
+# xc-ui-portal
 
 ## Build Setup
 
+```sh
+nvm use 14
+```
 
-# install dependencies
-$ npm install # Or yarn install
+## install dependencies
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+```sh
+npm install # Or yarn install
+```
 
-# build for production and launch server
-$ npm run build
-$ npm start
+## serve with hot reload at localhost:3000
 
-# generate static project
-$ npm run generate
+```sh
+npm run dev
+```
 
+## build for production and launch server
+
+```sh
+npm run build
+npm start
+```
+
+## generate static project
+
+```sh
+npm run generate
+```
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-

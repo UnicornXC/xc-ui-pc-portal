@@ -1,6 +1,6 @@
 <template>
   <div>
-    修改用户信息{{id}},名称：{{name}}
+    修改用户信息{{id}},名称：{{name}} {{ a }} - {{ b }}
   </div>
 </template>
 <script>
@@ -16,7 +16,7 @@
           setTimeout(function () {
             //alert(1)
             console.log(1)
-            resolve(1)
+            resolve(10)
           },2000)
         })
         //再调用b方法
@@ -27,14 +27,12 @@
             resolve(2)
           },1000)
         })
-        return {
-          name:'黑马程序员'
-        }
+        return { a, b, name: '程序员' }
       },
-        data(){
+      data(){
         return {
           id:'',
-          name:''
+          name:'',
         }
       },
       methods:{
